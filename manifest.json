@@ -13,8 +13,9 @@
         "*://*.linkedin.com/in/*"
       ],
       "js": [
-        "./src/main.js"
-      ]
+        "./dist/bundle.js"
+      ],
+      "run_at": "document_idle"
     }
   ],
   "action": {
