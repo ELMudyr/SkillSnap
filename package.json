@@ -16,6 +16,9 @@
     "vite": "^5.4.9"
   },
   "dependencies": {
-    "live-server": "^1.2.2"
+    "cheerio": "^1.0.0",
+    "groq-sdk": "^0.7.0",
+    "live-server": "^1.2.2",
+    "puppeteer": "^23.6.1"
   }
 }

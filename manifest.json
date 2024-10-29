@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Skill Snap",
+  "version": "1.0",
+  "description": "LinkedIn Profile Summarizer for Efficient hiring.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.linkedin.com/in/*"
+      ],
+      "js": [
+        "./src/main.js"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "./index.html"
+  }
+}
