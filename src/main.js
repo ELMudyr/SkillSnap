@@ -8,41 +8,57 @@ document.getElementById('onOff').addEventListener('click', () => {
           document.querySelector('section.profile')?.outerHTML;
 
         if (htmlContent) {
-          const extractedText = htmlContent.replace(/<[^>]+>/g, '').trim().replace(/\s+/g, ' ');
-          // console.log(extractedText);
-          return extractedText;
+          return htmlContent.replace(/<[^>]+>/g, '').trim().replace(/\s+/g, ' ');
         } else {
           console.log('Profile section not found.');
+          return null;
         }
+      }
+    }, async (injectionResults) => {
+      const extractedText = injectionResults[0]?.result;
+      if (extractedText) {
+        console.log(extractedText)
+        await fetchLlama(extractedText);
       }
     });
   });
 });
 
+export async function fetchLlama(extractedText) {
+  const apiUrl = 'https://api.groq.com/openai/v1/chat/completions';
+  const apiKey = VITE_API_KEY;
 
-import Groq from 'groq-sdk';
+  try {
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`
+      },
+      body: JSON.stringify({
+        messages: [
+          {
+            role: "user",
+            content: `Extract the following: Fullname, Location, Job Title, Work Experience, Education, Technical Skill, Soft Skills. Keep it short and compact in JSON format from this text: ${extractedText}`
+          }
+        ],
+        model: "llama3-8b-8192",
+        temperature: 1,
+        max_tokens: 1024,
+        top_p: 1,
+        stream: false,
+        stop: null
+      })
+    });
 
-const groq = new Groq();
-async function main() {
-  const chatCompletion = await groq.chat.completions.create({
-    "messages": [
-      {
-        "role": "user",
-        "content": `Extract the following : Fullname, Location, Job Title, Work Experience, Education, Technical Skill, Soft Skills. Keep it short, compact to only one lines or few words in JSON. from this text:${extractedText} `
-      }
-    ],
-    "model": "llama3-8b-8192",
-    "temperature": 1.14,
-    "max_tokens": 1024,
-    "top_p": 1,
-    "stream": false,
-    "response_format": {
-      "type": "json_object"
-    },
-    "stop": null
-  });
+    if (!response.ok) throw new Error(`Response error: ${response.statusText}`);
 
-  console.log(chatCompletion.choices[0].message.content);
+    const data = await response.json();
+    console.log(data.choices[0]?.message?.content || "");
+    return data.choices[0]?.message?.content || ""
+  } catch (error) {
+    console.error("Fetch error:", error);
+    return null
+  }
 }
 
-main();
