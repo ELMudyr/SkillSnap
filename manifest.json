@@ -13,7 +13,8 @@
         "*://*.linkedin.com/in/*"
       ],
       "js": [
-        "./dist/bundle.js"
+        "./src/main.js",
+        "./src/popup.js"
       ],
       "run_at": "document_idle"
     }

@@ -11,52 +11,46 @@
   <link href="./src/output.css" rel="stylesheet">
 </head>
 
-<body class="rounded-lg m-0 bg-background w-fit h-fit p-2 border-secondary border-2">
+<body class="rounded-lg m-0 bg-secondary w-fit h-fit p-2 border-secondary border-2">
   <div class=" gap-3 flex flex-col  w-[400px] min-h-[500px] ">
     <div
       class="bg-background h-[10%] items-center p-3 rounded-lg border-2 border-secondary w-full flex justify-between">
       <h1 class="text-primary uppercase text-md font-bold">Skill Snap</h1>
       <button id="onOff">Toggle On / Off</button>
+      <button id="display">display</button>
     </div>
     <div class="bg-background h-[80%] space-y-5 p-3 rounded-lg border-2 border-secondary w-full ">
       <div class=" flex gap-3 items-center">
-        <h1 class="font-medium text-md">Name:</h1>
-        <h1>Flan L Flani</h1>
+        <h1 class="font-medium text-primary text-md">Name:</h1>
+        <h1 class="text-sm " id="nameValue">Flan L Flani</h1>
       </div>
       <div class=" flex gap-3 items-center">
-        <h1 class="font-medium text-md">Location:</h1>
-        <h1>Tema 7da Lhih</h1>
+        <h1 class="font-medium text-primary text-md">Job:</h1>
+        <h1 class="text-sm" id="jobValue">Ajnieur</h1>
+      </div>
+      <div class=" flex gap-3 items-center text-pretty">
+        <h1 class="font-medium text-primary text-md">Location:</h1>
+        <h1 class="text-sm " id="locationValue">Tema 7da Lhih</h1>
       </div>
       <div class=" flex flex-col ">
-        <h1 class="font-medium text-md">Skills:</h1>
-        <div class="grid grid-cols-4 px-5 gap-5 justify-items-center mx-auto">
-          <h1>JS</h1>
-          <h1>HTML</h1>
-          <h1>CSS</h1>
-          <h1>UI/UX</h1>
+        <h1 class="font-medium text-primary text-md">Skills:</h1>
+        <div class="grid grid-cols-4 px-5 text-sm text-pretty gap-3 justify-items-start mx-auto" id="skillsContainer">
         </div>
       </div>
       <div class=" flex flex-col  ">
-        <h1 class="font-medium text-md">Experience:</h1>
-        <div class="pl-5">
-          <h1>2 Years Developer</h1>
-          <h1>1 Year UI/UX Designer</h1>
+        <h1 class="font-medium text-primary text-md">Experience:</h1>
+        <div class="pl-5 space-y-3 text-sm text-pretty" id="experienceContainer">
         </div>
       </div>
       <div class=" flex flex-col  ">
-        <h1 class="font-medium text-md">Education:</h1>
-        <div class="pl-5">
-          <h1>Masters in there </h1>
-          <h1>Bachelors in there</h1>
-        </div>
+        <h1 class="font-medium text-primary text-md">Education:</h1>
+        <ul class="pl-5 list-disc text-sm space-y-3 text-pretty" id="educationContainer">
+        </ul>
       </div>
       <div class=" flex flex-col ">
-        <h1 class="font-medium text-md">Soft Skills:</h1>
-        <div class="grid grid-cols-2 px-5 gap-5 justify-items-center mx-auto">
-          <h1>Communication</h1>
-          <h1>Problem Solving</h1>
-          <h1>Critical Thinking</h1>
-          <h1>Adaptability</h1>
+        <h1 class="font-medium text-primary text-md">Soft Skills:</h1>
+        <div class="grid grid-cols-2 px-5 text-sm text-pretty gap-3 justify-items-start mx-auto"
+          id="softSkillsContainer">
         </div>
       </div>
     </div>
@@ -65,13 +59,14 @@
       <h1 class="text-primary uppercase align-center text-md font-bold">Export <i
           class="fa-solid fa-file-export fa-xs "></i>
       </h1>
-      <i class="fa-brands fa-github fa-spin fa-lg"></i>
+      <a href="https://github.com/ELMudyr/SkillSnap">
+        <i class="fa-brands fa-github fa-spin fa-lg"></i>
+      </a>
     </div>
   </div>
 
-  <!-- <script src="./dist/bundle.js" type="module"></script> -->
-  <script src="./src/popup.js"></script>
-  <script src=" ./src/main.js" type="module"></script>
+  <script src="./src/popup.js" type="module"></script>
+  <script src="./src/main.js" type="module"></script>
 </body>
 
 </html>
