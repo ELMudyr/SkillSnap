@@ -13,7 +13,8 @@
 
 <body class="rounded-lg m-0 bg-secondary w-fit h-fit p-2 ">
   <div class=" gap-3 flex flex-col  w-[400px] min-h-[fit] ">
-    <div class="bg-primary h-[10%] items-center p-3 rounded-lg border-2 border-secondary w-full flex justify-between">
+    <div
+      class="bg-primary h-[10%] items-center px-8 py-3 rounded-lg border-2 border-secondary w-full flex justify-between">
       <h1 class="text-background text-2xl font-bold">Skill Snap</h1>
       <label for="Toggle2" class="inline-flex items-center space-x-3 cursor-pointer text-gray-100">
         <span class="relative">
@@ -27,7 +28,7 @@
 
     </div>
     <div id="fetchDiv"
-      class="bg-background  gap-3 flex flex-col justify-center m-auto text-center align-center py-7 p-3 rounded-lg border-2 border-secondary w-full ">
+      class="bg-background  gap-3 flex flex-col justify-center m-auto text-center align-center py-7 rounded-lg border-2 border-secondary w-full ">
       <h1 class="text-primary text-xl font-bold">Snap A Skill ?</h1>
       <div id="fetch"
         class="inline-flex items-center justify-center m-auto w-fit px-4 py-2 text-base font-medium animate-pulse text-center text-background rounded-lg shadow-sm cursor-pointer hover:text-secondary bg-gradient-to-br from-purple-500 via-primary to-primary ">
@@ -37,29 +38,29 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
         </svg>
       </div>
-      <div id="errorDiv"
-        class="bg-background  gap-3 flex flex-col justify-center m-auto text-center align-center py-7 p-3 rounded-lg border-2 border-secondary w-full ">
-        <h1 class="text-primary text-xl font-bold">Oops, there seems to be an error :/ <br> please try again</h1>
-        <div id="fetch"
-          class="inline-flex items-center justify-center m-auto w-fit px-4 py-2 text-base font-medium animate-pulse text-center text-background rounded-lg shadow-sm cursor-pointer hover:text-secondary bg-gradient-to-br from-purple-500 via-primary to-primary ">
-          <span class="relative">Fetch Profile</span>
-          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-          </svg>
-        </div>
+    </div>
+    <div id="errorDiv"
+      class="bg-background  gap-3 flex flex-col justify-center m-auto text-center align-center py-7 p-3 rounded-lg border-2 border-secondary w-full ">
+      <h1 class="text-primary text-xl font-bold">Oops, there seems to be an issue :/<br> please try again</h1>
+      <div id="fetch"
+        class="inline-flex items-center justify-center m-auto w-fit px-4 py-2 text-base font-medium animate-pulse text-center text-background rounded-lg shadow-sm cursor-pointer hover:text-secondary bg-gradient-to-br from-purple-500 via-primary to-primary ">
+        <span class="relative">Fetch Profile</span>
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        </svg>
       </div>
     </div>
     <div id="contentDiv" class="bg-background h-[80%] space-y-5 p-3 rounded-lg border-2 border-secondary w-full ">
-      <div class=" flex gap-3 items-center">
+      <div class=" flex gap-2 items-center">
         <h1 class="font-medium text-primary text-md">Name:</h1>
         <h1 class="text-sm " id="nameValue"></h1>
       </div>
-      <div class=" flex gap-3 items-center">
+      <div class=" flex gap-2 items-center">
         <h1 class="font-medium text-primary text-md">Job:</h1>
         <h1 class="text-sm" id="jobValue"></h1>
       </div>
-      <div class=" flex gap-3 items-center text-pretty">
+      <div class=" flex gap-2 items-center text-pretty">
         <h1 class="font-medium text-primary text-md">Location:</h1>
         <h1 class="text-sm " id="locationValue"></h1>
       </div>
@@ -68,17 +69,17 @@
         <div class="grid grid-cols-4 px-5 text-sm text-pretty gap-3 justify-items-start mx-auto" id="skillsContainer">
         </div>
       </div>
-      <div class=" flex flex-col  ">
+      <div class=" flex flex-col gap-2 ">
         <h1 class="font-medium text-primary text-md">Experience:</h1>
         <div class="pl-5 space-y-3 text-sm text-pretty" id="experienceContainer">
         </div>
       </div>
-      <div class=" flex flex-col  ">
+      <div class=" flex flex-col  gap-2">
         <h1 class="font-medium text-primary text-md">Education:</h1>
         <ul class="pl-5 list-disc text-sm space-y-3 text-pretty" id="educationContainer">
         </ul>
       </div>
-      <div class=" flex flex-col ">
+      <div class=" flex flex-col gap-2">
         <h1 class="font-medium text-primary text-md">Soft Skills:</h1>
         <div class="grid grid-cols-2 px-5 text-sm text-pretty gap-3 justify-items-start mx-auto"
           id="softSkillsContainer">
@@ -86,7 +87,7 @@
       </div>
     </div>
     <div
-      class="bg-background h-[10%] items-center p-3 rounded-lg border-2 border-secondary w-full flex justify-between">
+      class="bg-background h-[10%] items-center py-4 px-8 rounded-lg border-2 border-secondary w-full flex justify-between">
       <h1 id="Export" class="text-primary uppercase align-center text-md font-bold">Export <i
           class="fa-solid fa-file-export fa-xs "></i>
       </h1>

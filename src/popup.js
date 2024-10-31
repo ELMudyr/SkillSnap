@@ -37,6 +37,7 @@ fetch.addEventListener("click", async function() {
     toggleClasses(exportButton, "hidden", "block");
     toggleClasses(contentDiv, "hidden", "block");
     toggleClasses(errorDiv, "block", "hidden")
+    toggleClasses(fetchDiv, "hidden", "block")
   }
 })
 
@@ -47,6 +48,7 @@ toggleButton.addEventListener("change", function() {
     toggleClasses(fetchDiv, "hidden", "block")
     toggleClasses(exportButton, "hidden", "block");
     toggleClasses(contentDiv, "hidden", "block");
+    toggleClasses(errorDiv, "hidden", "block")
   }
 });
 

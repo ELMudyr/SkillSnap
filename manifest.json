@@ -7,6 +7,9 @@
     "activeTab",
     "scripting"
   ],
+  "icons": {
+    "80": "./assets/thumbnail.png"
+  },
   "content_scripts": [
     {
       "matches": [
