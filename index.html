@@ -15,8 +15,6 @@
   <div class=" gap-3 flex flex-col  w-[400px] min-h-[fit] ">
     <div class="bg-primary h-[10%] items-center p-3 rounded-lg border-2 border-secondary w-full flex justify-between">
       <h1 class="text-background text-2xl font-bold">Skill Snap</h1>
-      <button id="onOff">Toggle On / Off</button>
-      <button id="display">display</button>
       <label for="Toggle2" class="inline-flex items-center space-x-3 cursor-pointer text-gray-100">
         <span class="relative">
           <input id="Toggle2" type="checkbox" class="hidden peer">
@@ -28,8 +26,17 @@
       </label>
 
     </div>
-    <div id="off" class="bg-background h-[80%] space-y-5 p-3 rounded-lg border-2 border-secondary w-full ">
-      this is offline
+    <div id="off"
+      class="bg-background  gap-3 flex flex-col justify-center m-auto text-center align-center py-7 p-3 rounded-lg border-2 border-secondary w-full ">
+      <h1 class="text-primary text-xl font-bold">Snap A Skill ?</h1>
+      <div id="fetch"
+        class="inline-flex items-center justify-center m-auto w-fit px-4 py-2 text-base font-medium animate-pulse text-center text-background rounded-lg shadow-sm cursor-pointer hover:text-secondary bg-gradient-to-br from-purple-500 via-primary to-primary ">
+        <span class="relative">Fetch Profile</span>
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        </svg>
+      </div>
     </div>
     <div id="on" class="bg-background h-[80%] space-y-5 p-3 rounded-lg border-2 border-secondary w-full ">
       <div class=" flex gap-3 items-center">
@@ -66,12 +73,12 @@
         </div>
       </div>
     </div>
-    <div id="on2"
+    <div
       class="bg-background h-[10%] items-center p-3 rounded-lg border-2 border-secondary w-full flex justify-between">
-      <h1 class="text-primary uppercase align-center text-md font-bold">Export <i
+      <h1 id="on2" class="text-primary uppercase align-center text-md font-bold">Export <i
           class="fa-solid fa-file-export fa-xs "></i>
       </h1>
-      <a href="https://github.com/ELMudyr/SkillSnap">
+      <a class="ml-auto" href="https://github.com/ELMudyr/SkillSnap">
         <i class="fa-brands fa-github fa-spin fa-lg"></i>
       </a>
     </div>

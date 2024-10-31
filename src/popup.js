@@ -1,5 +1,5 @@
-// import data from '../data.json'
-// import { getContentJson } from './main.js'
+// import data from "../data.json"
+import { extractAndFetch } from './main.js'
 const toggleButton = document.getElementById("Toggle2")
 const nameValue = document.getElementById("nameValue")
 const locationValue = document.getElementById("locationValue")
@@ -8,11 +8,12 @@ const jobValue = document.getElementById("jobValue")
 const experienceContainer = document.getElementById("experienceContainer")
 const educationContainer = document.getElementById("educationContainer")
 const softSkillsContainer = document.getElementById("softSkillsContainer")
-// const display = document.getElementById("display")
 const offDiv = document.getElementById("off")
 const onDiv = document.getElementById("on")
 const onDiv2 = document.getElementById("on2")
+const fetch = document.getElementById("fetch")
 
+fetch.classList.add("block")
 onDiv2.classList.add("hidden");
 onDiv2.classList.remove("block");
 onDiv.classList.add("hidden");
@@ -22,26 +23,35 @@ function toggleClasses(element, addClass, removeClass) {
   element.classList.add(addClass);
   element.classList.remove(removeClass);
 }
+fetch.addEventListener("click", async function() {
 
-toggleButton.addEventListener("change", async function() {
-  if (this.checked) {
-    // const data = await exntractAndFetch()
+  const data = await extractAndFetch()
+  console.warn(data)
+  if (data) {
+    renderContent(data)
     toggleClasses(onDiv2, "block", "hidden");
     toggleClasses(onDiv, "block", "hidden");
     toggleClasses(offDiv, "hidden", "block");
-    if (data) {
-    }
+    toggleClasses(fetch, "hidden", "block")
   } else {
     toggleClasses(onDiv2, "hidden", "block");
     toggleClasses(onDiv, "hidden", "block");
     toggleClasses(offDiv, "block", "hidden");
   }
+})
+
+toggleButton.addEventListener("change", async function() {
+  if (this.checked) {
+    toggleClasses(onDiv2, "hidden", "block");
+    toggleClasses(onDiv, "hidden", "block");
+    toggleClasses(offDiv, "block", "hidden");
+  } else {
+    toggleClasses(offDiv, "hidden", "block");
+  }
 });
 
 
-function renderContent() {
-  const data = getContentJson()
-  console.log(data)
+function renderContent(data) {
   nameValue.textContent = data.fullname
   locationValue.textContent = data.location
   jobValue.textContent = data.jobTitle
