@@ -16,7 +16,7 @@ To download and install the Skill Snap extension, follow these steps:
 1. **Download the Source Code:**
    - Clone or download the repository from GitHub:
      ```bash
-     git clone <repository-url>
+     git clone --branch build https://github.com/ELMudyr/SkillSnap.git
      ```
    - Alternatively, you can download the ZIP file directly from GitHub and extract it.
 
