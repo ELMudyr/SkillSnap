@@ -1,5 +1,6 @@
 // import data from '../data.json'
-import { fetchLlama, getContentJson } from './main.js'
+// import { getContentJson } from './main.js'
+const toggleButton = document.getElementById("Toggle2")
 const nameValue = document.getElementById("nameValue")
 const locationValue = document.getElementById("locationValue")
 const skillsContainer = document.getElementById("skillsContainer")
@@ -7,9 +8,38 @@ const jobValue = document.getElementById("jobValue")
 const experienceContainer = document.getElementById("experienceContainer")
 const educationContainer = document.getElementById("educationContainer")
 const softSkillsContainer = document.getElementById("softSkillsContainer")
-const display = document.getElementById("display")
+// const display = document.getElementById("display")
+const offDiv = document.getElementById("off")
+const onDiv = document.getElementById("on")
+const onDiv2 = document.getElementById("on2")
 
-display.addEventListener("click", () => {
+onDiv2.classList.add("hidden");
+onDiv2.classList.remove("block");
+onDiv.classList.add("hidden");
+onDiv.classList.remove("block");
+
+function toggleClasses(element, addClass, removeClass) {
+  element.classList.add(addClass);
+  element.classList.remove(removeClass);
+}
+
+toggleButton.addEventListener("change", async function() {
+  if (this.checked) {
+    // const data = await exntractAndFetch()
+    toggleClasses(onDiv2, "block", "hidden");
+    toggleClasses(onDiv, "block", "hidden");
+    toggleClasses(offDiv, "hidden", "block");
+    if (data) {
+    }
+  } else {
+    toggleClasses(onDiv2, "hidden", "block");
+    toggleClasses(onDiv, "hidden", "block");
+    toggleClasses(offDiv, "block", "hidden");
+  }
+});
+
+
+function renderContent() {
   const data = getContentJson()
   console.log(data)
   nameValue.textContent = data.fullname
@@ -43,6 +73,6 @@ display.addEventListener("click", () => {
     educationH1.innerHTML = `<li> ${education.degree}  ${education.university}</li>`
     educationContainer.appendChild(educationH1)
   })
-})
+}
 
 
