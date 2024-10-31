@@ -8,45 +8,45 @@ const jobValue = document.getElementById("jobValue")
 const experienceContainer = document.getElementById("experienceContainer")
 const educationContainer = document.getElementById("educationContainer")
 const softSkillsContainer = document.getElementById("softSkillsContainer")
-const offDiv = document.getElementById("off")
-const onDiv = document.getElementById("on")
-const onDiv2 = document.getElementById("on2")
+const contentDiv = document.getElementById("contentDiv")
+const exportButton = document.getElementById("Export")
 const fetch = document.getElementById("fetch")
+const fetchDiv = document.getElementById("fetchDiv")
 
-fetch.classList.add("block")
-onDiv2.classList.add("hidden");
-onDiv2.classList.remove("block");
-onDiv.classList.add("hidden");
-onDiv.classList.remove("block");
 
 function toggleClasses(element, addClass, removeClass) {
+
   element.classList.add(addClass);
   element.classList.remove(removeClass);
 }
+toggleClasses(contentDiv, "hidden", "block")
+toggleClasses(exportButton, "hidden", "block")
+toggleClasses(fetchDiv, "block", "hidden")
+toggleClasses(errorDiv, "hidden", "block")
+
+fetch.checked = true
 fetch.addEventListener("click", async function() {
 
   const data = await extractAndFetch()
-  console.warn(data)
   if (data) {
     renderContent(data)
-    toggleClasses(onDiv2, "block", "hidden");
-    toggleClasses(onDiv, "block", "hidden");
-    toggleClasses(offDiv, "hidden", "block");
-    toggleClasses(fetch, "hidden", "block")
+    toggleClasses(exportButton, "block", "hidden");
+    toggleClasses(contentDiv, "block", "hidden");
+    toggleClasses(fetchDiv, "hidden", "block")
   } else {
-    toggleClasses(onDiv2, "hidden", "block");
-    toggleClasses(onDiv, "hidden", "block");
-    toggleClasses(offDiv, "block", "hidden");
+    toggleClasses(exportButton, "hidden", "block");
+    toggleClasses(contentDiv, "hidden", "block");
+    toggleClasses(errorDiv, "block", "hidden")
   }
 })
 
-toggleButton.addEventListener("change", async function() {
+toggleButton.addEventListener("change", function() {
   if (this.checked) {
-    toggleClasses(onDiv2, "hidden", "block");
-    toggleClasses(onDiv, "hidden", "block");
-    toggleClasses(offDiv, "block", "hidden");
+    toggleClasses(fetchDiv, "block", "hidden")
   } else {
-    toggleClasses(offDiv, "hidden", "block");
+    toggleClasses(fetchDiv, "hidden", "block")
+    toggleClasses(exportButton, "hidden", "block");
+    toggleClasses(contentDiv, "hidden", "block");
   }
 });
 
